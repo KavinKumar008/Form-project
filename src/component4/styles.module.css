@@ -1,0 +1,73 @@
+.mainContainer{
+    background-color: #fff;
+    /* padding: 20px 200px; */
+    min-width: 1200px;
+    height: 600px;
+    /* margin-top: 20px; */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.firstSection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.firstSectionHeading{
+    margin-top: 50px;
+    /* margin-bottom: 50px; */
+}
+
+.tickContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    height: 150px;
+    /* border: 1px solid green; */
+}
+
+.tickImg{
+    max-width: 100%;
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+    padding: 20px;
+    border: 2px solid #3a86ff;
+    background-color: #caf0f8;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.firstCustomPara{ 
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.firstSetupPara{
+    color: #ccc;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.fBtn{
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    /* padding: 80px auto; */
+}
+
+.fourthPageBtn{
+    font-size: 15px;
+    padding: 10px 60px;
+    color: #fff;
+    background-color: #3a86ff;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    /* margin-bottom: 50px; */
+}
