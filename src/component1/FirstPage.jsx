@@ -15,7 +15,6 @@ const FirstPage = () => {
   const [onBoardMtd, setOnboardMtd] = useState("signup");
 
   const handleSubmit = (e) => {
-    // console.log(e.tatget.value);
     e.preventDefault();
     setShowdata(true);
   };
