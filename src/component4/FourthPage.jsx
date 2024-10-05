@@ -2,8 +2,12 @@ import React from "react";
 import styles from "./styles.module.css";
 import { FaAmazon } from "react-icons/fa";
 import { TiTick } from "react-icons/ti";
+import { useLocation } from "react-router-dom";
 
 const FourthPage = () => {
+  const location = useLocation();
+  const data = location.state;
+
   return (
     <div>
       <main className={styles.mainContainer}>
@@ -28,6 +32,15 @@ const FourthPage = () => {
             Let's Start
           </button>
         </div>
+        {
+          <ul>
+            <li>{data.mail}</li>
+            <li>{data.password}</li>
+            <li>{data.cname}</li>
+            <li>{data.ctype}</li>
+            <li>{data.cstrength}</li>
+          </ul>
+        }
       </main>
     </div>
   );

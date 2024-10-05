@@ -5,9 +5,18 @@ import { IoIosArrowBack } from "react-icons/io";
 import { GiSchoolBag } from "react-icons/gi";
 import { HiOutlineUpload } from "react-icons/hi";
 import { FiEdit3 } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
+import FourthPage from "../component4/FourthPage";
 
-const ThirdPage = () => {
+const ThirdPage = ({ mail, password, cname, ctype, cstrength }) => {
   const buttonValue = ["Upload Logo", "Edit Logo"];
+
+  const navigate = useNavigate();
+
+  const handleSubmit = () => {
+    navigate("/fourthPage");
+  };
+
   return (
     <div>
       <main className={styles.mainContainer}>
@@ -48,11 +57,31 @@ const ThirdPage = () => {
           </button>
         </section>
         <div className={styles.btns}>
-          <button type="submit" className={styles.thrdPageBtn}>
+          <button
+            type="submit"
+            className={styles.thrdPageBtn}
+            onClick={handleSubmit}
+          >
             Continue
           </button>
         </div>
+        {
+          <ul>
+            <li>{mail}</li>
+            <li>{password}</li>
+            <li>{cname}</li>
+            <li>{ctype}</li>
+            <li>{cstrength}</li>
+          </ul>
+        }
       </main>
+      <FourthPage
+        mail={mail}
+        password={password}
+        cname={cname}
+        ctype={ctype}
+        cstrength={cstrength}
+      />
     </div>
   );
 };

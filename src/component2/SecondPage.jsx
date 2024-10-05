@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./styles.module.css";
 import { FaAmazon } from "react-icons/fa";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const SecondPage = () => {
   const [cname, setCname] = useState("");
@@ -8,9 +9,16 @@ const SecondPage = () => {
   const [cstrength, setCstrength] = useState("");
   const [show, setShow] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setShow(true);
+  const location = useLocation();
+  const data = location.state;
+
+  const navigate = useNavigate();
+  const item = { cname, ctype, cstrength };
+
+  const handleSubmit = () => {
+    // e.preventDefault();
+    // setShow(true);
+    navigate("/fourthPage", { state: data, state: item });
   };
 
   const handleReset = () => {
@@ -123,6 +131,9 @@ const SecondPage = () => {
           )}
         </div>
       </main>
+
+      <h1>{data.mail}</h1>
+      <h1>{data.password}</h1>
     </div>
   );
 };
