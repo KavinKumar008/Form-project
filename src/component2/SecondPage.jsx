@@ -12,13 +12,15 @@ const SecondPage = () => {
   const location = useLocation();
   const data = location.state;
 
+  console.log(data);
+
   const navigate = useNavigate();
-  const item = { cname, ctype, cstrength };
+  const item = { cname, ctype, cstrength, data };
 
   const handleSubmit = () => {
     // e.preventDefault();
     // setShow(true);
-    navigate("/fourthPage", { state: data, state: item });
+    navigate("/fourthPage", { state: item });
   };
 
   const handleReset = () => {

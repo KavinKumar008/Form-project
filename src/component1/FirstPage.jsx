@@ -6,12 +6,17 @@ import { TiTick } from "react-icons/ti";
 import { FaApple } from "react-icons/fa";
 import { FaMicrosoft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import Blue from "../assets/blue.jpg";
+import Blue4 from "../assets/blue4.jpg";
+import Blue5 from "../assets/blue5.jpg";
 
 const FirstPage = () => {
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
   const [showdata, setShowdata] = useState(false);
   const [onBoardMtd, setOnboardMtd] = useState("signup");
+  const [currentImage, setCurrentImage] = useState(null);
+  const images = [Blue, Blue4, Blue5];
 
   const navigate = useNavigate();
   const data = { mail, password };
@@ -35,10 +40,22 @@ const FirstPage = () => {
     setOnboardMtd("login");
   };
 
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentImage(images[Math.floor(Math.random() * images.length)]);
+      // console.log("useeffect");
+      // console.log(intervalId);
+    }, 2000);
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
     <>
       <main className={styles.mainContainer}>
-        <section className={styles.leftContainer}>
+        <section
+          className={styles.leftContainer}
+          style={{ backgroundImage: `url(${currentImage})` }}
+        >
           <div className={styles.leftTop}>
             <h1 className={styles.leftHeadingPara}>Welcome to Simple Flow</h1>
             <p className={styles.leftTitlePara}>

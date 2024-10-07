@@ -8,6 +8,7 @@ const FourthPage = () => {
   const location = useLocation();
   const data = location.state;
 
+  console.log(data);
   return (
     <div>
       <main className={styles.mainContainer}>
@@ -33,9 +34,9 @@ const FourthPage = () => {
           </button>
         </div>
         {
-          <ul>
-            <li>{data.mail}</li>
-            <li>{data.password}</li>
+          <ul className={styles.displayData}>
+            <li>{data.data.mail}</li>
+            <li>{data.data.password}</li>
             <li>{data.cname}</li>
             <li>{data.ctype}</li>
             <li>{data.cstrength}</li>
