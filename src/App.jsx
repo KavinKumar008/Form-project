@@ -5,6 +5,7 @@ import ThirdPage from "./component3/ThirdPage";
 import FourthPage from "./component4/FourthPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./navbar/NavBar";
+import GetMethod from "./fetchingapi/GetMethod";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="/fourthPage" element={<FourthPage />} />
         </Routes>
       </BrowserRouter>
+      <GetMethod />
     </>
   );
 };
