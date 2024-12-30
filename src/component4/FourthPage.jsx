@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./styles.module.css";
 import { FaAmazon } from "react-icons/fa";
 import { TiTick } from "react-icons/ti";
 import { useLocation } from "react-router-dom";
+import { Context } from "../createcontext/DataContext";
 
 const FourthPage = () => {
-  const location = useLocation();
-  const data = location.state;
+  // const location = useLocation();
+  // const data = location.state;
 
-  console.log(data);
+  const context = useContext(Context);
+
+  console.log(context.gettingAllData);
   return (
     <div>
       <main className={styles.mainContainer}>
@@ -35,11 +38,11 @@ const FourthPage = () => {
         </div>
         {
           <ul className={styles.displayData}>
-            <li>{data.data.mail}</li>
+            {/* <li>{data.data.mail}</li>
             <li>{data.data.password}</li>
             <li>{data.cname}</li>
             <li>{data.ctype}</li>
-            <li>{data.cstrength}</li>
+            <li>{data.cstrength}</li> */}
           </ul>
         }
       </main>

@@ -6,20 +6,21 @@ import FourthPage from "./component4/FourthPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./navbar/NavBar";
 import GetMethod from "./fetchingapi/GetMethod";
+import DataContext from "./createcontext/DataContext";
 
 const App = () => {
   return (
     <>
-      <BrowserRouter>
-        {/* <NavBar /> */}
+      <DataContext />
+      {/* <BrowserRouter>
         <Routes>
           <Route path="/" element={<FirstPage />} />
           <Route path="/secondPage" element={<SecondPage />} />
           <Route path="/thirdPage" element={<ThirdPage />} />
           <Route path="/fourthPage" element={<FourthPage />} />
         </Routes>
-      </BrowserRouter>
-      <GetMethod />
+      </BrowserRouter> */}
+      {/* <GetMethod /> */}
     </>
   );
 };

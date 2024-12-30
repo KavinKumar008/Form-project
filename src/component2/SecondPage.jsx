@@ -3,25 +3,33 @@ import styles from "./styles.module.css";
 import { FaAmazon } from "react-icons/fa";
 import { useLocation, useNavigate } from "react-router-dom";
 
-const SecondPage = () => {
+const SecondPage = ({ gettingAllData, setGettingAllData, setCurrentPage }) => {
   const [cname, setCname] = useState("");
   const [ctype, setCtype] = useState("");
   const [cstrength, setCstrength] = useState("");
   const [show, setShow] = useState(false);
 
-  const location = useLocation();
-  const data = location.state;
+  // const location = useLocation();
+  // const data = location.state;
 
-  console.log(data);
+  // console.log(data);
 
-  const navigate = useNavigate();
-  const item = { cname, ctype, cstrength, data };
+  // const navigate = useNavigate();
+  // const item = { cname, ctype, cstrength, data };
 
-  const handleSubmit = () => {
-    // e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
     // setShow(true);
-    navigate("/fourthPage", { state: item });
+    // navigate("/fourthPage", { state: item });
+    // navigate("/fourthPage");
+    setCurrentPage("fourthPage");
+    setGettingAllData((prev) => [
+      ...prev,
+      { companyName: cname, companyType: ctype, companyStrength: cstrength },
+    ]);
   };
+
+  console.log(gettingAllData);
 
   const handleReset = () => {
     setCname("");
@@ -134,8 +142,8 @@ const SecondPage = () => {
         </div>
       </main>
 
-      <h1>{data.mail}</h1>
-      <h1>{data.password}</h1>
+      {/* <h1>{data.mail}</h1>
+      <h1>{data.password}</h1> */}
     </div>
   );
 };

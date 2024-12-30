@@ -11,10 +11,10 @@ import FourthPage from "../component4/FourthPage";
 const ThirdPage = ({ mail, password, cname, ctype, cstrength }) => {
   const buttonValue = ["Upload Logo", "Edit Logo"];
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const handleSubmit = () => {
-    navigate("/fourthPage");
+    // navigate("/fourthPage");
   };
 
   return (
@@ -75,13 +75,13 @@ const ThirdPage = ({ mail, password, cname, ctype, cstrength }) => {
           </ul>
         }
       </main>
-      <FourthPage
+      {/* <FourthPage
         mail={mail}
         password={password}
         cname={cname}
         ctype={ctype}
         cstrength={cstrength}
-      />
+      /> */}
     </div>
   );
 };

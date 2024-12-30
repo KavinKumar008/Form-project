@@ -10,7 +10,7 @@ import Blue from "../assets/blue.jpg";
 import Blue4 from "../assets/blue4.jpg";
 import Blue5 from "../assets/blue5.jpg";
 
-const FirstPage = () => {
+const FirstPage = ({ gettingAllData, setGettingAllData, setCurrentPage }) => {
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
   const [showdata, setShowdata] = useState(false);
@@ -18,15 +18,18 @@ const FirstPage = () => {
   const [currentImage, setCurrentImage] = useState(null);
   const images = [Blue, Blue4, Blue5];
 
-  const navigate = useNavigate();
-  const data = { mail, password };
+  // const navigate = useNavigate();
+  // const data = { mail, password };
 
-  const handleSubmit = () => {
-    // e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
     // setShowdata(true);
-    navigate("/secondPage", { state: data });
+    // navigate("/secondPage", { state: data });
+    // navigate("/secondPage");
+    setCurrentPage("secondPage");
+    setGettingAllData((prev) => [...prev, { email: mail, pass: password }]);
   };
-
+  console.log(gettingAllData);
   const handleReset = () => {
     setMail("");
     setPassword("");
@@ -40,14 +43,14 @@ const FirstPage = () => {
     setOnboardMtd("login");
   };
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentImage(images[Math.floor(Math.random() * images.length)]);
-      // console.log("useeffect");
-      // console.log(intervalId);
-    }, 2000);
-    return () => clearInterval(intervalId);
-  }, []);
+  // useEffect(() => {
+  //   const intervalId = setInterval(() => {
+  //     setCurrentImage(images[Math.floor(Math.random() * images.length)]);
+  //     // console.log("useeffect");
+  //     // console.log(intervalId);
+  //   }, 2000);
+  //   return () => clearInterval(intervalId);
+  // }, []);
 
   return (
     <>
